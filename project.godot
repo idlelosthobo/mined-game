@@ -16,10 +16,18 @@ config/icon="res://assets/application/game_icon.png"
 
 [autoload]
 
-global_settings="*res://global/GlobalSettingsManager.gd"
-global_debug="*res://global/GlobalDebugManager.gd"
-global_random="*res://global/GlobalRandomManager.gd"
-global_save="*res://global/GlobalSaveManager.gd"
+SettingsManager="*res://global/SettingsManager.gd"
+SaveManager="*res://global/SaveManager.gd"
+CampaignManager="*res://global/CampaignManager.gd"
+DebugManager="*res://global/DebugManager.gd"
+RandomManager="*res://global/RandomManager.gd"
+AudioManager="*res://global/AudioManager.gd"
+GameManager="*res://global/GameManager.gd"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
 
 [editor_plugins]
 

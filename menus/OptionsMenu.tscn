@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://menus/OptionsMenu.gd" type="Script" id=1]
+[ext_resource path="res://resources/fonts/mainfont.tres" type="DynamicFont" id=2]
+
+[sub_resource type="Theme" id=1]
+
+[node name="OptionsMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 521.0
+margin_right = 759.0
+margin_bottom = 720.0
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 256.0
+margin_right = 238.0
+margin_bottom = 464.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer"]
+margin_right = 238.0
+margin_bottom = 208.0
+custom_constants/separation = 10
+
+[node name="OptionsMenuTitle" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_right = 238.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 2 )
+text = "Options Menu"
+
+[node name="VolumeMasterLabel" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 38.0
+margin_right = 238.0
+margin_bottom = 52.0
+text = "Master Volume"
+
+[node name="VolumeMasterSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 62.0
+margin_right = 238.0
+margin_bottom = 78.0
+
+[node name="VolumeMusicLabel" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 88.0
+margin_right = 238.0
+margin_bottom = 102.0
+text = "Music Volume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeMusicSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 112.0
+margin_right = 238.0
+margin_bottom = 128.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeSFXLabel" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 138.0
+margin_right = 238.0
+margin_bottom = 152.0
+text = "SFX Volume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeSFXSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 162.0
+margin_right = 238.0
+margin_bottom = 178.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExitGameButton" type="Button" parent="HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 188.0
+margin_right = 238.0
+margin_bottom = 208.0
+text = "Exit Game"
+
+[connection signal="value_changed" from="HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer/VolumeMasterSlider" to="." method="_on_VolumeMasterSlider_value_changed"]
+[connection signal="value_changed" from="HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer/VolumeMusicSlider" to="." method="_on_VolumeMusicSlider_value_changed"]
+[connection signal="value_changed" from="HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer/VolumeSFXSlider" to="." method="_on_VolumeSFXSlider_value_changed"]
+[connection signal="button_up" from="HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer/ExitGameButton" to="." method="_on_ExitGameButton_button_up"]

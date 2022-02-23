@@ -1,0 +1,173 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/art/menus/main_menu_background.jpg" type="Texture" id=1]
+[ext_resource path="res://resources/menu_item_styleboxflat.tres" type="StyleBox" id=2]
+[ext_resource path="res://resources/fonts/mainfont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://resources/menu_item_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://menus/MainMenu.gd" type="Script" id=5]
+[ext_resource path="res://resources/menu_item_hover_styleboxflat.tres" type="StyleBox" id=6]
+[ext_resource path="res://resources/menu_item_pressed_styleboxflat.tres" type="StyleBox" id=7]
+[ext_resource path="res://resources/menu_item_focus_styleboxflat.tres" type="StyleBox" id=8]
+[ext_resource path="res://resources/menu_item_disabled_styleboxflat.tres" type="StyleBox" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Fade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[node name="MainMenu" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 5 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="GameTitle" type="Label" parent="."]
+margin_left = 60.0
+custom_colors/font_color = Color( 0.564706, 1, 0.54902, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.392157 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+custom_fonts/font = ExtResource( 3 )
+text = "MINED"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 1223.0
+margin_bottom = 689.0
+alignment = 2
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 973.0
+margin_right = 1223.0
+margin_bottom = 689.0
+custom_constants/separation = 16
+alignment = 2
+
+[node name="Campaign" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 243.0
+margin_right = 250.0
+margin_bottom = 304.0
+custom_colors/font_color = Color( 0.564706, 1, 0.54902, 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 8 )
+custom_styles/disabled = ExtResource( 9 )
+custom_styles/normal = ExtResource( 2 )
+disabled = true
+text = "CAMPAIGN"
+
+[node name="Sandbox" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 320.0
+margin_right = 250.0
+margin_bottom = 381.0
+custom_colors/font_color = Color( 0.564706, 1, 0.54902, 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 8 )
+custom_styles/disabled = ExtResource( 9 )
+custom_styles/normal = ExtResource( 2 )
+text = "sandbox"
+
+[node name="Tutorial" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 397.0
+margin_right = 250.0
+margin_bottom = 458.0
+custom_colors/font_color = Color( 0.564706, 1, 0.54902, 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 8 )
+custom_styles/disabled = ExtResource( 9 )
+custom_styles/normal = ExtResource( 2 )
+disabled = true
+text = "TUTORIAL"
+
+[node name="Options" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 474.0
+margin_right = 250.0
+margin_bottom = 535.0
+custom_colors/font_color = Color( 0.564706, 1, 0.54902, 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 8 )
+custom_styles/disabled = ExtResource( 9 )
+custom_styles/normal = ExtResource( 2 )
+disabled = true
+text = "OPTIONS"
+
+[node name="Credits" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 551.0
+margin_right = 250.0
+margin_bottom = 612.0
+custom_colors/font_color = Color( 0.564706, 1, 0.54902, 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 8 )
+custom_styles/disabled = ExtResource( 9 )
+custom_styles/normal = ExtResource( 2 )
+text = "CREDITS"
+
+[node name="Exit" type="Button" parent="HBoxContainer/VBoxContainer"]
+margin_top = 628.0
+margin_right = 250.0
+margin_bottom = 689.0
+custom_colors/font_color = Color( 0.564706, 1, 0.54902, 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/focus = ExtResource( 8 )
+custom_styles/disabled = ExtResource( 9 )
+custom_styles/normal = ExtResource( 2 )
+text = "EXIT"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+autoplay = "Fade"
+anims/Fade = SubResource( 1 )
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Campaign" to="." method="_on_Campaign_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Sandbox" to="." method="_on_Sandbox_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Tutorial" to="." method="_on_Tutorial_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
